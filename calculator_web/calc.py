@@ -7,7 +7,14 @@ import numpy as np
 import pandas as pd
 import joblib
 
+import os
+
+abspath = os.path.abspath(__file__)
+dname = os.path.dirname(abspath)
+os.chdir(dname)
+
 app = dash.Dash(__name__)
+server = app.server
 
 df = pd.read_csv("../../joined_combined_filtered_mined_soil_water_df_td_17_4.csv")
 fdf = df[(df["pool"] != True) & (df["secondfloor"] < 1) & (df["mhome"] < 1)  & (df["pers_prop_val"] < 1) & (df["parval"] < 1000000) & (df["parval"] > 10000) & (df["lot_area"] < 500)].copy()
