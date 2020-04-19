@@ -17,7 +17,7 @@ dname = os.path.dirname(abspath)
 os.chdir(dname)
 
 
-app = dash.Dash(__name__, external_stylesheets = ["http://localhost/home/style.css"])
+app = dash.Dash(__name__, external_stylesheets = ["/static/style.css"])
 server = app.server
 
 df = pd.read_csv("../../joined_combined_filtered_mined_soil_water_df_td_17_4.csv")
@@ -93,7 +93,7 @@ structure.extend(info_section)
 
 #print(structure)
 
-app.layout = html.Div(structure + [html.Article(dji.Import(src="http://localhost/home/script.js"))])
+app.layout = html.Div(structure + [html.Article(dji.Import(src="/static/script.js"))])
 
 slider_inputs = [Input({'type': 'dynslider', 'index': f + '--slider'}, 'value') for f in features]
 inputs = [Input('xaxis-column', 'value')]
