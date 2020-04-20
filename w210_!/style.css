@@ -107,7 +107,7 @@ li.ps {
 #markDetails{
     position: absolute;
     right: 80px;
-    top: 250px;
+    top: 270px;
     width: 400px;
     height: 400px;
     font-size: 12px;
@@ -119,7 +119,7 @@ li.ps {
 #markDetailsTitle{
     position: absolute;
     right: 370px;
-    top: 225px;
+    top: 245px;
     font-family: Arial, sans-serif;
     color: #073763ff;
     font-variant: small-caps;
