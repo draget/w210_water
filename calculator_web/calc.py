@@ -47,7 +47,7 @@ sliders = [
         min=round(fdf[f].quantile(0.25),1),
         max=round(fdf[f].quantile(0.75),1),
         value=fdf[f].mean(),
-        marks={str(int(x)): str(int(x)) for x in np.linspace(int(fdf[f].quantile(0.25)), int(fdf[f].quantile(0.75)), 5)},
+        marks={str(int(x)): str(int(x)) for x in np.linspace(int(fdf[f].quantile(0.10)), int(fdf[f].quantile(0.90)), 5)},
         included = False,
         step = 0.1,
         tooltip = {}
@@ -70,7 +70,7 @@ structure = list([
             dcc.Dropdown(
                 id='xaxis-column',
                 options=[{'label': fl, 'value': features[i]} for i,fl in enumerate(features_label)],
-                value='TotalWater'
+                value='TotalWater', clearable = False, searchable = False,
             ), style = {'width': '15%', 'display' : 'inline-block', 'paddingLeft': '24px'})
         ], style = {'marginBottom': '20px', 'marginTop': '20px'})
 
@@ -127,6 +127,7 @@ def update_graph(x_col, *values):
         v = [model.predict([arg])[0] for arg in pred_args]
 
         cdff = pd.DataFrame({'x': u, 'pred': v, 'text': t})
+
 
     data = [dict(
             name="Prediction",
