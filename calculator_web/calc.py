@@ -61,7 +61,7 @@ sliders = [
 
 structure = list([
 
-    html.Div([dcc.Graph(id='indicator-graphic', style={'flex':'47.5%'}, responsive = 'auto'),    dcc.Graph(id='hist-graphic', style={'flex':'20%'}, responsive = 'auto')], style={'display':'flex', 'width' : '80%'}),
+    html.Div([dcc.Graph(id='indicator-graphic', style={'flex':'47.5%'}, responsive = 'auto'),    dcc.Graph(id='hist-graphic', style={'flex':'20%'}, responsive = 'auto')], style={'display':'flex', 'width' : '90%'}),
 
     html.Div(
         [
@@ -83,7 +83,7 @@ info_section = list([ html.Div([
     html.Div(
         [html.Div("", id = "glossary_sel", style = {'fontStyle': 'italic', 'fontSize': '14pt', 'padding': '5px 5px 0px 5px'}), html.Div("", id = "glossary_txt", style = {'padding': '5px'})
         , html.Div(dcc.Markdown("Random forest regression fitted on 12273 parcel samples, R<sup>2</sup> = 0.54 on 2166 test samples. Target variable source Fresno County Assesor via LandGrid.", dangerously_allow_html=True), style = {'padding': '5px', 'fontSize': '11px', 'fontStyle': 'italic'})]
-        , style = {'flex': '20%', 'border': 'solid 1px gray'})], style = {'display': 'flex', 'width' : '80%'}  )
+        , style = {'flex': '20%', 'border': 'solid 1px gray'})], style = {'display': 'flex', 'width' : '90%'}  )
 
 
 
