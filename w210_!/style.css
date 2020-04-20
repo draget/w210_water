@@ -75,7 +75,7 @@ ul {
     margin-left: 5px;
 }
 
-ul li {
+ul.nav li.nav {
     list-style: none;
     display: inline-block;
     float: left;
@@ -83,7 +83,7 @@ ul li {
 
 }
 
-ul li a{
+ul.nav li.nav a{
     display: block;
     text-decoration: none;
     font-size: 14px;
@@ -91,20 +91,38 @@ ul li a{
     padding: 0 20px;
     color: #ffffff;
 }
-ul li a:hover{
+ul.nav li.nav a:hover{
     color: #c1dcf5ff;
+}
+
+ul.ps {
+    list-style: circle inside;
+    text-align: left;
+}
+
+li.ps {
+    position: auto;
 }
 
 #markDetails{
     position: absolute;
     right: 80px;
-    top: 200px;
+    top: 250px;
     width: 400px;
     height: 400px;
     font-size: 12px;
     text-align: right;
     border: 1px solid #073763ff;
     border-radius: 5px;
+}
+
+#markDetailsTitle{
+    position: absolute;
+    right: 370px;
+    top: 225px;
+    font-family: Arial, sans-serif;
+    color: #073763ff;
+    font-variant: small-caps;
 }
 
 iframe {

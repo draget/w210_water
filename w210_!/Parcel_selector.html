@@ -39,10 +39,10 @@
 
             for (var markIndex = 0; markIndex < marks.length; markIndex++) {
                 var pairs = marks[markIndex].getPairs();
-                html += "<b>Details " + (markIndex +1) + ":</b><ul>";
+                html += "<b>Details " + (markIndex +1) + ":</b><ul class=\"ps\">";
                 for (var pairIndex = 0; pairIndex < pairs.length; pairIndex++) {
                     var pair = pairs[pairIndex];
-                    html += "<li>" + pair.fieldName + ":" + pair.formattedValue + "</li>";
+                    html += "<li class=\"ps\">" + pair.fieldName + ":&emsp;" + pair.formattedValue + "</li>";
                    // html += "<br/><b>Value:</b> " + pair.formattedValue + "</li>";
                 }
                 html += "</ul>";
@@ -54,22 +54,27 @@
 </head>
 <body onload="initViz();">
 <nav>
-    <ul>
-        <li><image id="drop" src="drop.png" /></li>
-        <li class="menubtn" id="firstli"><a href="index.html">Home</a></li>
-        <li class="menubtn"><a href="Agriculture.html">Agriculture in Fresno Country</a></li>
-        <li class="menubtn"><a href="Parcel_selector.html">Parcel Selector</a></li>
-        <li class="menubtn"><a href="calc.html">Interactive Calculator</a></li>
-        <li class="menubtn"><a href="References.html">References</a></li>
-        <li class="menubtn"><a href="About.html">About the Team</a></li>
-        <li><image id="bkly" src="https://www.ischool.berkeley.edu/files/berkeleyischool-logo-white.svg" height="60px"/></li>
+    <ul class="nav">
+        <li class="nav"><image id="drop" src="drop.png" /></li>
+        <li class="menubtn nav" id="firstli"><a href="index.html">Home</a></li>
+        <li class="menubtn nav"><a href="Agriculture.html">Agriculture in Fresno Country</a></li>
+        <li class="menubtn nav"><a href="Parcel_selector.html">Parcel Selector</a></li>
+        <li class="menubtn nav"><a href="calc.html">Interactive Calculator</a></li>
+        <li class="menubtn nav"><a href="References.html">References</a></li>
+        <li class="menubtn nav"><a href="About.html">About the Team</a></li>
+        <li class="nav"><image id="bkly" src="https://www.ischool.berkeley.edu/files/berkeleyischool-logo-white.svg" height="60px"/></li>
     </ul>
 
 </nav>
+<p class="title">Land Parcel Information</p>
 <p class="descr">  Below is a map of the different crops grown throughout Fresno County. The user can filter the map by crop type, or look up a parcel number to obtain information. </p>
 
 <div id="vizContainer" style="position: absolute; left: 30px;"></div>
-<div id="markDetails"></div>
+
+<div id="markDetailsTitle">Parcel Details:</div>
+<div id="markDetails">
+<br /><br /><p style="text-align: center">Select a parcel...</p>
+</div>
 
 
 </body>
